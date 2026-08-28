@@ -14,4 +14,4 @@ MARS MIPS Assembler and Runtime Simulator Fork
 
 The build system used here is Maven, simply run:
 
-sh`mvn clean package`
+`mvn clean package`
