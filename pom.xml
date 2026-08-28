@@ -25,7 +25,9 @@
                 <version>3.2.0</version>
                 <configuration>
                     <archive>
-                        <manifestFile>src/main/resources/mainclass.txt</manifestFile>
+                        <manifest>
+                          <mainClass>Mars</mainClass>
+                        </manifest>
                     </archive>
                 </configuration>
             </plugin>
