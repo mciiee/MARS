@@ -32,7 +32,7 @@
         </plugins>
         <resources>
             <resource>
-                <directory>${project.basedir}</directory>
+              <directory>${project.basedir}/src/main/resources</directory>
                 <includes>
                     <include>PseudoOps.txt</include>
                     <include>Config.properties</include>
@@ -46,7 +46,7 @@
                 </includes>
             </resource>
             <resource>
-                <directory>${project.basedir}</directory>
+                <directory>${project.basedir}/src/main/resources</directory>
                 <includes>
                     <include>docs/**</include>
                     <include>help/**</include>
