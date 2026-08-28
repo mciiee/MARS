@@ -53,8 +53,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private boolean steppedExecution = false;
    
       private String filename;
-      private ArrayList sourceList;
-      private ArrayList tokenList;
+      private ArrayList<String> sourceList;
+      private ArrayList<TokenList> tokenList;
       private ArrayList parsedList;
       private ArrayList machineList;
       private BackStepper backStepper;
@@ -68,7 +68,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @return ArrayList of String.  Each String is one line of MIPS source code.
     **/
     
-       public ArrayList getSourceList() {
+       public ArrayList<String> getSourceList() {
          return sourceList;
       }
    
@@ -80,7 +80,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	
        public void setSourceLineList(ArrayList<SourceLine> sourceLineList) { 
          this.sourceLineList = sourceLineList; 
-         sourceList = new ArrayList();
+         sourceList = new ArrayList<String>();
          for (SourceLine sl : sourceLineList) {
             sourceList.add(sl.getSource());
          } 
@@ -112,7 +112,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @see TokenList
     **/
     
-       public ArrayList getTokenList() {
+       public ArrayList<TokenList> getTokenList() {
          return tokenList;
       }
    

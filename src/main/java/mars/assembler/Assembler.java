@@ -223,7 +223,7 @@
          // tokenList is an ArrayList of TokenList objects, one per source line;
          // each ArrayList in tokenList consists of Token objects.
             ArrayList<SourceLine> sourceLineList = fileCurrentlyBeingAssembled.getSourceLineList();
-            ArrayList tokenList = fileCurrentlyBeingAssembled.getTokenList();
+            ArrayList<TokenList> tokenList = fileCurrentlyBeingAssembled.getTokenList();
             ArrayList parsedList = fileCurrentlyBeingAssembled.createParsedList();
          // each file keeps its own macro definitions
             MacroPool macroPool = fileCurrentlyBeingAssembled.createMacroPool();
