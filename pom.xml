@@ -30,30 +30,5 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-              <directory>${project.basedir}/src/main/resources</directory>
-                <includes>
-                    <include>PseudoOps.txt</include>
-                    <include>Config.properties</include>
-                    <include>Syscall.properties</include>
-                    <include>Settings.properties</include>
-                    <include>MARSlicense.txt</include>
-                    <include>MipsXRayOpcode.xml</include>
-                    <include>registerDatapath.xml</include>
-                    <include>controlDatapath.xml</include>
-                    <include>ALUcontrolDatapath.xml</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <includes>
-                    <include>docs/**</include>
-                    <include>help/**</include>
-                    <include>images/**</include>
-                    <include>mars/**</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 </project>
