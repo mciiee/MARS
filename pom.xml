@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>edu.missouristate</groupId>
+    <artifactId>mars</artifactId>
+    <version>4.5</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <finalName>Mars</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifestFile>src/main/resources/mainclass.txt</manifestFile>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>PseudoOps.txt</include>
+                    <include>Config.properties</include>
+                    <include>Syscall.properties</include>
+                    <include>Settings.properties</include>
+                    <include>MARSlicense.txt</include>
+                    <include>MipsXRayOpcode.xml</include>
+                    <include>registerDatapath.xml</include>
+                    <include>controlDatapath.xml</include>
+                    <include>ALUcontrolDatapath.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>docs/**</include>
+                    <include>help/**</include>
+                    <include>images/**</include>
+                    <include>mars/**</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>
