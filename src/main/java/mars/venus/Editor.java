@@ -236,6 +236,26 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        public boolean open() {
          return editTabbedPane.openFile();
       }
+
+		/**
+		 *  Open file in a new tab.
+   	 *  @param file File to open
+		 *  @return true if succeeded, else false.
+		 */
+       public boolean open(File file) {
+         return editTabbedPane.openFile(file);
+      }
+
+		/**
+		 *  Reopen file in a new tab.
+   	 *  @param file File to reopen
+		 *  @return true if succeeded, else false.
+		 */
+       public boolean reopen(File file) {
+         return editTabbedPane.reopenFile(file);
+      }
+
+      
    
    
    

@@ -38,7 +38,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
  
     /**
-    * Action  for the File -&gt; Open menu item
+    * Action  for the File -&gt; Reopen menu item
     */   			
     public class FileReopenAction extends GuiAction {
     
@@ -59,6 +59,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	  * @param e component triggering this call
    	  */
        public void actionPerformed(ActionEvent e) {
+         System.out.print("File: ");
+         File file = FileStatus.getFile(); 
+         System.out.println(file);
+         if (file != null) {
+           Boolean success = mainUI.editor.reopen(file);
+           System.out.println("File reopen success: " + success.toString());
+         }
       }
    
    }      

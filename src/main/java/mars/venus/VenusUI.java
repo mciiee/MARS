@@ -80,7 +80,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          
       // components of the toolbar
       private JButton Undo, Redo, Cut, Copy, Paste, FindReplace, SelectAll;
-      private JButton New, Open, Save, SaveAs, SaveAll, DumpMemory, Print;
+      private JButton New, Open, Reopen, Save, SaveAs, SaveAll, DumpMemory, Print;
       private JButton Run, Assemble, Reset, Step, Backstep, Stop, Pause;
       private JButton Help;
    
@@ -668,6 +668,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          New.setText("");
          Open = new JButton(fileOpenAction);
          Open.setText(""); 
+         Reopen = new JButton(fileReopenAction);
+         Reopen.setText(""); 
          Save = new JButton(fileSaveAction);
          Save.setText("");
          SaveAs = new JButton(fileSaveAsAction);
@@ -711,6 +713,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          
          toolBar.add(New);
          toolBar.add(Open);
+         toolBar.add(Reopen);
          toolBar.add(Save);
          toolBar.add(SaveAs);
          if (new mars.mips.dump.DumpFormatLoader().loadDumpFormats().size() > 0) {
@@ -789,6 +792,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        void setMenuStateInitial() {
          fileNewAction.setEnabled(true);
          fileOpenAction.setEnabled(true);
+         fileReopenAction.setEnabled(false);
          fileCloseAction.setEnabled(false);
          fileCloseAllAction.setEnabled(false);
          fileSaveAction.setEnabled(false);
@@ -828,6 +832,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       /* Note: undo and redo are handled separately by the undo manager*/  
          fileNewAction.setEnabled(true);
          fileOpenAction.setEnabled(true);
+         fileReopenAction.setEnabled(true);
          fileCloseAction.setEnabled(true);
          fileCloseAllAction.setEnabled(true);
          fileSaveAction.setEnabled(true);
@@ -869,6 +874,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       /* Note: undo and redo are handled separately by the undo manager*/  
          fileNewAction.setEnabled(true);
          fileOpenAction.setEnabled(true);
+         fileReopenAction.setEnabled(true);
          fileCloseAction.setEnabled(true);
          fileCloseAllAction.setEnabled(true);
          fileSaveAction.setEnabled(true);
@@ -905,6 +911,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       /* Note: undo and redo are handled separately by the undo manager*/  
          fileNewAction.setEnabled(true);
          fileOpenAction.setEnabled(true);
+         fileReopenAction.setEnabled(true);
          fileCloseAction.setEnabled(true);
          fileCloseAllAction.setEnabled(true);
          fileSaveAction.setEnabled(true);
@@ -941,6 +948,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       /* Note: undo and redo are handled separately by the undo manager */  
          fileNewAction.setEnabled(true);
          fileOpenAction.setEnabled(true);
+         fileReopenAction.setEnabled(true);
          fileCloseAction.setEnabled(true);
          fileCloseAllAction.setEnabled(true);
          fileSaveAction.setEnabled(true);
@@ -978,6 +986,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       /* Note: undo and redo are handled separately by the undo manager */  
          fileNewAction.setEnabled(false);
          fileOpenAction.setEnabled(false);
+         fileReopenAction.setEnabled(false);
          fileCloseAction.setEnabled(false);
          fileCloseAllAction.setEnabled(false);
          fileSaveAction.setEnabled(false);
@@ -1012,6 +1021,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       /* Note: undo and redo are handled separately by the undo manager */  
          fileNewAction.setEnabled(true);
          fileOpenAction.setEnabled(true);
+         fileReopenAction.setEnabled(true);
          fileCloseAction.setEnabled(true);
          fileCloseAllAction.setEnabled(true);
          fileSaveAction.setEnabled(true);
