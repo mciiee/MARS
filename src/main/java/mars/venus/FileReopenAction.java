@@ -63,7 +63,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          File file = FileStatus.getFile(); 
          System.out.println(file);
          if (file != null) {
-           Boolean success = mainUI.editor.reopen(file);
+           mainUI.editor.close();
+           Boolean success = mainUI.editor.open(file);
            System.out.println("File reopen success: " + success.toString());
          }
       }
