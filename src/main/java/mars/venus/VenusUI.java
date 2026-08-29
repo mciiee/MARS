@@ -69,7 +69,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	
    	// components of the menubar
       private JMenu file, run, window, help, edit, settings;
-      private JMenuItem fileNew, fileOpen, fileClose, fileCloseAll, fileSave, fileSaveAs, fileSaveAll, fileDumpMemory, filePrint, fileExit;
+      private JMenuItem fileNew, fileOpen, fileReopen, fileClose, fileCloseAll, fileSave, fileSaveAs, fileSaveAll, fileDumpMemory, filePrint, fileExit;
       private JMenuItem editUndo, editRedo, editCut, editCopy, editPaste, editFindReplace, editSelectAll;
       private JMenuItem runGo, runStep, runBackstep, runReset, runAssemble, runStop, runPause, runClearBreakpoints, runToggleBreakpoints;
       private JCheckBoxMenuItem settingsLabel, settingsPopupInput, settingsValueDisplayBase, settingsAddressDisplayBase,
@@ -88,7 +88,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	// shared between a menu item and its corresponding toolbar button.  This is a very cool
    	// technique because it relates the button and menu item so closely
    	
-      private Action fileNewAction, fileOpenAction, fileCloseAction, fileCloseAllAction, fileSaveAction;
+      private Action fileNewAction, fileOpenAction, fileReopenAction, fileCloseAction, fileCloseAllAction, fileSaveAction;
       private Action fileSaveAsAction, fileSaveAllAction, fileDumpMemoryAction, filePrintAction, fileExitAction;
       EditUndoAction editUndoAction;
       EditRedoAction editRedoAction;
@@ -250,7 +250,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                                             new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"Open22.png"))),
                									  "Open a file for editing", KeyEvent.VK_O,
                									  KeyStroke.getKeyStroke( KeyEvent.VK_O, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()),
-               									  mainUI);	
+               									  mainUI);
+            fileReopenAction = new FileReopenAction("Reopen", null, 
+                                            "Reopen the current file", KeyEvent.VK_R, 
+                                  KeyStroke.getKeyStroke( KeyEvent.VK_R, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), 
+                                  mainUI);
             fileCloseAction = new FileCloseAction("Close", null,
                                             "Close the current file", KeyEvent.VK_C,
                									  KeyStroke.getKeyStroke( KeyEvent.VK_W, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()),
@@ -488,6 +492,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          fileNew.setIcon(new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"New16.png"))));
          fileOpen = new JMenuItem(fileOpenAction);
          fileOpen.setIcon(new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"Open16.png"))));
+         fileReopen = new JMenuItem(fileReopenAction);
+         fileReopen.setIcon(new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"MyBlank16.gif"))));
          fileClose = new JMenuItem(fileCloseAction);
          fileClose.setIcon(new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"MyBlank16.gif"))));
          fileCloseAll = new JMenuItem(fileCloseAllAction);
@@ -506,6 +512,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          fileExit.setIcon(new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"MyBlank16.gif"))));
          file.add(fileNew);
          file.add(fileOpen);
+         file.add(fileReopen);
          file.add(fileClose);
          file.add(fileCloseAll);
          file.addSeparator();

@@ -115,8 +115,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private static final int HEXADECIMAL = 1;// memory and register display format
       private static final int ASCII = 2;// memory and register display format
       private ArrayList registerDisplayList;
-      private ArrayList memoryDisplayList;
-      private ArrayList filenameList;
+      private ArrayList<String> memoryDisplayList;
+      private ArrayList<String> filenameList;
       private MIPSprogram code;
       private int maxSteps;
       private int instructionCount;
@@ -149,8 +149,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             assembleErrorExitCode = 0;
             simulateErrorExitCode = 0;
             registerDisplayList = new ArrayList();
-            memoryDisplayList = new ArrayList();
-            filenameList = new ArrayList();
+            memoryDisplayList = new ArrayList<String>();
+            filenameList = new ArrayList<String>();
             MemoryConfigurations.setCurrentConfiguration(MemoryConfigurations.getDefaultConfiguration());
          	// do NOT use Globals.program for command line MARS -- it triggers 'backstep' log.
             code = new MIPSprogram();  
