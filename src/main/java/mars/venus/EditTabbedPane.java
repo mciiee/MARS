@@ -174,6 +174,16 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        public boolean openFile(File file) {
          return fileOpener.openFile(file);
       }
+
+    /**
+     * Carries out all necessary operations to reopen the
+     * specified file in the editor.
+     *  @return true if file was reopened, false otherwise.
+     */
+       public boolean reopenFile(File file) {
+         return fileOpener.reopenFile(file);
+      }
+    
    
    	
    /**
@@ -665,7 +675,76 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             }
             return true;
          }
-        
+
+           /*
+            * (Re-)Open the specified file.  Return true if file opened, false otherwise
+            */
+           private boolean reopenFile(File theFile) {
+               try {
+                   theFile = theFile.getCanonicalFile();
+               }
+               catch (IOException ioe) {
+                   // nothing to do, theFile will keep current value
+               }
+               String currentFilePath = theFile.getPath();
+               // If this file is currently already open, then simply select its tab
+               EditPane editPane = new EditPane(mainUI);
+               editPane.setPathname(currentFilePath);
+               //FileStatus.reset();
+               FileStatus.setName(currentFilePath);
+               FileStatus.setFile(theFile);
+               FileStatus.set(FileStatus.OPENING);// DPS 9-Aug-2011
+               if (theFile.canRead()) {
+                   Globals.program = new MIPSprogram();
+                   try {
+                       Globals.program.readSource(currentFilePath);
+                   }
+                   catch (ProcessingException pe) {
+                   }
+                   // DPS 1 Nov 2006.  Defined a StringBuffer to receive all file contents,
+                   // one line at a time, before adding to the Edit pane with one setText.
+                   // StringBuffer is preallocated to full filelength to eliminate dynamic
+                   // expansion as lines are added to it. Previously, each line was appended
+                   // to the Edit pane as it was read, way slower due to dynamic string alloc.
+                   StringBuffer fileContents = new StringBuffer((int)theFile.length());
+                   int lineNumber = 1;
+                   String line = Globals.program.getSourceLine(lineNumber++);
+                   while (line != null) {
+                       fileContents.append(line+"\n");
+                       line = Globals.program.getSourceLine(lineNumber++);
+                   }
+                   editPane.setSourceCode(fileContents.toString(), true);
+                   // The above operation generates an undoable edit, setting the initial
+                   // text area contents, that should not be seen as undoable by the Undo
+                   // action.  Let's get rid of it.
+                   editPane.discardAllUndoableEdits();
+                   editPane.setShowLineNumbersEnabled(true);
+                   editPane.setFileStatus(FileStatus.NOT_EDITED);
+
+                   addTab(editPane.getFilename(), editPane);
+                   setToolTipTextAt(indexOfComponent(editPane), editPane.getPathname());
+                   setSelectedComponent(editPane);
+                   FileStatus.setSaved(true);
+                   FileStatus.setEdited(false);
+                   FileStatus.set(FileStatus.NOT_EDITED);
+
+                   // If assemble-all, then allow opening of any file w/o invalidating assembly.
+                   // DPS 9-Aug-2011
+                   if (Globals.getSettings().getBooleanSetting(mars.Settings.ASSEMBLE_ALL_ENABLED)) {
+                       updateTitles(editPane);
+                   }
+                   else {// this was the original code...
+                       updateTitlesAndMenuState(editPane);
+                       mainPane.getExecutePane().clearPane();
+                   }
+
+                   mainPane.setSelectedComponent(EditTabbedPane.this);
+                   editPane.tellEditingComponentToRequestFocusInWindow();
+                   mostRecentlyOpenedFile = theFile;
+               }
+               return true;
+           }
+
       // Private method to generate the file chooser's list of choosable file filters.
       // It is called when the file chooser is created, and called again each time the Open
       // dialog is activated.  We do this because the user may have added a new filter 
