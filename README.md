@@ -10,10 +10,13 @@ MARS MIPS Assembler and Runtime Simulator Fork
  This is a fork of the original MARS, developed by Pete Sanderson and Ken Vollmar.  Developed while Pete was professor at Otterbein University and Ken was professor at Missouri State University.  Both are now retired. This is a legacy application but is very stable and continues to be used by universities throughout the world as of 2024. Thus, I decided to upgrade it with some quality-of-life features. Core functionality remains the same.
  
 ## Additional features
+- Build system: maven
 - Reopening an active file
 
 ## Build
 
-The build system used here is Maven, simply run:
-
+Build with:
 `mvn clean package`
+
+Run with:
+`java -jar target/Mars.jar`
