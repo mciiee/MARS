@@ -83,10 +83,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * that represents a tokenized source statement from the MIPS program.
     **/
    
-       public ArrayList tokenize(MIPSprogram p) throws ProcessingException {
+       public ArrayList<TokenList> tokenize(MIPSprogram p) throws ProcessingException {
          sourceMIPSprogram = p;
          equivalents = new HashMap<String,String>(); // DPS 11-July-2012
-         ArrayList tokenList = new ArrayList();
+         ArrayList<TokenList> tokenList = new ArrayList<TokenList>();
          //ArrayList source = p.getSourceList();
          ArrayList<SourceLine> source = processIncludes(p, new HashMap<String,String>()); // DPS 9-Jan-2013
          p.setSourceLineList(source);

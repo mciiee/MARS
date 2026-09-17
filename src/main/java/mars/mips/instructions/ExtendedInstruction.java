@@ -45,7 +45,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
     public class ExtendedInstruction extends Instruction {
    
-      private ArrayList translationStrings, compactTranslationStrings;
+      private ArrayList<String> translationStrings, compactTranslationStrings;
     /**
      * Constructor for ExtendedInstruction.
      * 
@@ -119,7 +119,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
      * @return ArrayList of Strings.
      */
     
-       public ArrayList getBasicIntructionTemplateList() {
+       public ArrayList<String> getBasicIntructionTemplateList() {
          return translationStrings;
       }
    
@@ -157,7 +157,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	  * have a compact alternative.
      */
     
-       public ArrayList getCompactBasicIntructionTemplateList() {
+       public ArrayList<String> getCompactBasicIntructionTemplateList() {
          return compactTranslationStrings;
       }
 		   
