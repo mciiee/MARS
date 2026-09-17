@@ -448,6 +448,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.BARE_MACHINE_ENABLED</code>)
    	 */
+       @Deprecated
        public boolean getBareMachineEnabled() {
          return booleanSettingsValues[BARE_MACHINE_ENABLED];
       }
@@ -458,6 +459,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.EXTENDED_ASSEMBLER_ENABLED</code>)
    		*/
+       @Deprecated
        public boolean getExtendedAssemblerEnabled() {
          return booleanSettingsValues[EXTENDED_ASSEMBLER_ENABLED];
       }
@@ -469,6 +471,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.ASSEMBLE_ON_OPEN_ENABLED</code>)
    		*/
+       @Deprecated
        public boolean getAssembleOnOpenEnabled() {
          return booleanSettingsValues[ASSEMBLE_ON_OPEN_ENABLED];
       }
@@ -479,6 +482,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.DISPLAY_ADDRESSES_IN_HEX</code>)
    		*/
+       @Deprecated
        public boolean getDisplayAddressesInHex() {
          return booleanSettingsValues[DISPLAY_ADDRESSES_IN_HEX];
       }
@@ -489,6 +493,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.DISPLAY_VALUES_IN_HEX</code>)
    		*/
+       @Deprecated
        public boolean getDisplayValuesInHex() {
          return booleanSettingsValues[DISPLAY_VALUES_IN_HEX];
       }
@@ -502,6 +507,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.ASSEMBLE_ALL_ENABLED</code>)
    		*/
+       @Deprecated
        public boolean getAssembleAllEnabled() {
          return booleanSettingsValues[ASSEMBLE_ALL_ENABLED];
       }   		
@@ -515,6 +521,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.EXCEPTION_HANDLER_ENABLED</code>)
    		*/
+       @Deprecated
        public boolean getExceptionHandlerEnabled() {
          return booleanSettingsValues[EXCEPTION_HANDLER_ENABLED];
       }	
@@ -529,6 +536,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.DELAYED_BRANCHING_ENABLED</code>)
    		*/
+       @Deprecated
        public boolean getDelayedBranchingEnabled() {
          return booleanSettingsValues[DELAYED_BRANCHING_ENABLED];
       }	
@@ -539,6 +547,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.LABEL_WINDOW_VISIBILITY</code>)
    	 */
+       @Deprecated
        public boolean getLabelWindowVisibility() {
          return booleanSettingsValues[LABEL_WINDOW_VISIBILITY];
       }
@@ -550,6 +559,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.EDITOR_LINE_NUMBERS_DISPLAYED</code>)
    	 */
+       @Deprecated
        public boolean getEditorLineNumbersDisplayed() {
          return booleanSettingsValues[EDITOR_LINE_NUMBERS_DISPLAYED];
       }
@@ -561,6 +571,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.WARNINGS_ARE_ERRORS</code>)
    	 */
+       @Deprecated
        public boolean getWarningsAreErrors() {
          return booleanSettingsValues[WARNINGS_ARE_ERRORS];
       }
@@ -572,6 +583,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.PROGRAM_ARGUMENTS</code>)
    	 */
+       @Deprecated
        public boolean getProgramArguments() {
          return booleanSettingsValues[PROGRAM_ARGUMENTS];
       }
@@ -583,6 +595,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.DATA_SEGMENT_HIGHLIGHTING</code>)
    	 */
+       @Deprecated
        public boolean getDataSegmentHighlighting() {
          return booleanSettingsValues[DATA_SEGMENT_HIGHLIGHTING];
       }
@@ -595,6 +608,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.REGISTERS_HIGHLIGHTING</code>)
    	 */
+       @Deprecated
        public boolean getRegistersHighlighting() {
          return booleanSettingsValues[REGISTERS_HIGHLIGHTING];
       }   
@@ -607,6 +621,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>getBooleanSetting(int id)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.START_AT_MAIN</code>)
    	 */
+       @Deprecated
        public boolean getStartAtMain() {
          return booleanSettingsValues[START_AT_MAIN];
       }   
@@ -820,6 +835,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.EXTENDED_ASSEMBLER_ENABLED</code>)
    	 */
+       @Deprecated
        public void setExtendedAssemblerEnabled(boolean value) {
          internalSetBooleanSetting(EXTENDED_ASSEMBLER_ENABLED, value);
       }
@@ -832,6 +848,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.ASSEMBLE_ON_OPEN_ENABLED</code>)
    		*/
+       @Deprecated
        public void setAssembleOnOpenEnabled(boolean value) {
          internalSetBooleanSetting(ASSEMBLE_ON_OPEN_ENABLED, value);
       }
@@ -845,6 +862,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.ASSEMBLE_ALL_ENABLED</code>)
    		*/
+       @Deprecated
        public void setAssembleAllEnabled(boolean value) {
          internalSetBooleanSetting(ASSEMBLE_ALL_ENABLED, value);
       }
@@ -856,6 +874,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.DISPLAY_ADDRESSES_IN_HEX</code>)
    		*/
+       @Deprecated
        public void setDisplayAddressesInHex(boolean value) {
          internalSetBooleanSetting(DISPLAY_ADDRESSES_IN_HEX, value);
       }
@@ -867,6 +886,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.DISPLAY_VALUES_IN_HEX</code>)
    		*/
+       @Deprecated
        public void setDisplayValuesInHex(boolean value) {
          internalSetBooleanSetting(DISPLAY_VALUES_IN_HEX, value);
       }
@@ -879,6 +899,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.LABEL_WINDOW_VISIBILITY</code>)
    		*/
+       @Deprecated
        public void setLabelWindowVisibility(boolean value) {
          internalSetBooleanSetting(LABEL_WINDOW_VISIBILITY, value);
       }
@@ -892,6 +913,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.EXCEPTION_HANDLER_ENABLED</code>)
    		*/
+       @Deprecated
        public void setExceptionHandlerEnabled(boolean value) {
          internalSetBooleanSetting(EXCEPTION_HANDLER_ENABLED, value);
       }					  
@@ -906,7 +928,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	   *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	   *  (e.g. <code>Settings.DELAYED_BRANCHING_ENABLED</code>)
    		*/
-   		
+       @Deprecated
        public void setDelayedBranchingEnabled(boolean value) {
          internalSetBooleanSetting(DELAYED_BRANCHING_ENABLED, value);
       }   
@@ -918,6 +940,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.EDITOR_LINE_NUMBERS_DISPLAYED</code>)
    	 */
+       @Deprecated
        public void setEditorLineNumbersDisplayed(boolean value) {
          internalSetBooleanSetting(EDITOR_LINE_NUMBERS_DISPLAYED, value);
       }
@@ -928,6 +951,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.WARNINGS_ARE_ERRORS</code>)
    	 */
+       @Deprecated
        public void setWarningsAreErrors(boolean value) {
          internalSetBooleanSetting(WARNINGS_ARE_ERRORS, value);
       }
@@ -939,6 +963,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.PROGRAM_ARGUMENTS</code>)
    	 */
+       @Deprecated
        public void setProgramArguments(boolean value) {
          internalSetBooleanSetting(PROGRAM_ARGUMENTS, value);
       }
@@ -950,6 +975,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.DATA_SEGMENT_HIGHLIGHTING</code>)
    	 */
+       @Deprecated
        public void setDataSegmentHighlighting(boolean value) {
          internalSetBooleanSetting(DATA_SEGMENT_HIGHLIGHTING, value);
       }   	
@@ -962,6 +988,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.REGISTERS_HIGHLIGHTING</code>)
    	 */
+       @Deprecated
        public void setRegistersHighlighting(boolean value) {
          internalSetBooleanSetting(REGISTERS_HIGHLIGHTING, value);
       }   	
@@ -974,6 +1001,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSetting(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.START_AT_MAIN</code>)
    	 */
+       @Deprecated
        public void setStartAtMain(boolean value) {
          internalSetBooleanSetting(START_AT_MAIN, value);
       }      	  
@@ -1005,6 +1033,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  @deprecated Use <code>setBooleanSettingNonPersistent(int id, boolean value)</code> with the appropriate boolean setting ID
    	 *  (e.g. <code>Settings.DELAYED_BRANCHING_ENABLED</code>)
    	 */
+       @Deprecated
        public void setDelayedBranchingEnabledNonPersistent(boolean value) {
          // Note: Doing assignment to array results in non-persistent 
       	// setting (lost when MARS terminates).  For persistent, use

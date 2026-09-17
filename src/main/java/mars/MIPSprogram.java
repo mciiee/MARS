@@ -55,7 +55,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private String filename;
       private ArrayList<String> sourceList;
       private ArrayList<TokenList> tokenList;
-      private ArrayList parsedList;
+      private ArrayList<ProgramStatement> parsedList;
       private ArrayList machineList;
       private BackStepper backStepper;
       private SymbolTable localSymbolTable;
@@ -132,8 +132,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @see ProgramStatement
     **/
     
-       public ArrayList createParsedList() {
-         parsedList = new ArrayList();
+       public ArrayList<ProgramStatement> createParsedList() {
+         parsedList = new ArrayList<ProgramStatement>();
          return parsedList;
       }
    
@@ -144,7 +144,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @see ProgramStatement
     **/
     
-       public ArrayList getParsedList() {
+       public ArrayList<ProgramStatement> getParsedList() {
+         System.err.println("Got parsed list: ");
+         System.err.println(this.parsedList);
          return parsedList;
       }
    

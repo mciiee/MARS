@@ -38,7 +38,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  **/
 
     public class ErrorList {
-      private ArrayList messages;
+      private ArrayList<ErrorMessage> messages;
       private int errorCount;
       private int warningCount;
       public static final String ERROR_MESSAGE_PREFIX = "Error";
@@ -54,7 +54,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    **/
    
        public ErrorList() {
-         messages = new ArrayList();
+         messages = new ArrayList<ErrorMessage>();
          errorCount = 0;
          warningCount = 0;
       }
@@ -63,7 +63,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     *  Get ArrayList of error messages.
     *  @return ArrayList of ErrorMessage objects
     */
-       public ArrayList getErrorMessages() {
+       public ArrayList<ErrorMessage> getErrorMessages() {
          return messages;
       }
    	  

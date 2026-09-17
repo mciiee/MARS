@@ -46,7 +46,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     public class InstructionSet
    {
-      private ArrayList instructionList;
+      private ArrayList<Instruction> instructionList;
 	  private ArrayList opcodeMatchMaps;
       private SyscallLoader syscallLoader;
     /**
@@ -54,7 +54,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
      */
        public InstructionSet()
       {
-         instructionList = new ArrayList();
+         instructionList = new ArrayList<Instruction>();
       
       }
     /**
@@ -3186,16 +3186,16 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
      *  @param name operator mnemonic (e.g. addi, sw,...)
      *  @return list of corresponding Instruction object(s), or null if not found.
      */
-       public ArrayList matchOperator(String name)
+       public ArrayList<Instruction> matchOperator(String name)
       {
-         ArrayList matchingInstructions = null;
+         ArrayList<Instruction> matchingInstructions = null;
         // Linear search for now....
          for (int i = 0; i < instructionList.size(); i++)
          {
-            if (((Instruction) instructionList.get(i)).getName().equalsIgnoreCase(name))
+            if ((instructionList.get(i)).getName().equalsIgnoreCase(name))
             {
                if (matchingInstructions == null) 
-                  matchingInstructions = new ArrayList();
+                  matchingInstructions = new ArrayList<Instruction>();
                matchingInstructions.add(instructionList.get(i));
             }
          }
