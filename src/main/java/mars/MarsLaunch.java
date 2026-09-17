@@ -122,7 +122,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private int instructionCount;
       private PrintStream out; // stream for display of command line output
       private ArrayList dumpTriples = null; // each element holds 3 arguments for dump option
-      private ArrayList programArgumentList; // optional program args for MIPS program (becomes argc, argv)
+      private ArrayList<String> programArgumentList; // optional program args for MIPS program (becomes argc, argv)
       private int assembleErrorExitCode;  // MARS command exit code to return if assemble error occurs
       private int simulateErrorExitCode;// MARS command exit code to return if simulation error occurs
    		
@@ -279,7 +279,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          	// that will become "argc" and "argv" for the MIPS program.
             if (inProgramArgumentList) {
                if (programArgumentList == null) {
-                  programArgumentList = new ArrayList();
+                  programArgumentList = new ArrayList<String>();
                }
                programArgumentList.add(args[i]);
                continue;
@@ -449,6 +449,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                	   // Do nothing.  next statement will handle it
                }
             out.println("Invalid Command Argument: "+args[i]);
+            displayHelp();
+
             argsOK = false;
          }
          return argsOK;
