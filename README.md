@@ -12,6 +12,7 @@ MARS MIPS Assembler and Runtime Simulator Fork
 ## Additional features
 - Build system: maven
 - Reopening an active file
+- Usage printing upon using invalid CLI options
 
 ## Build
 
