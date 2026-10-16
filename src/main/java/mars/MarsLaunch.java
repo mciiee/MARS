@@ -263,8 +263,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          boolean argsOK = true;
          boolean inProgramArgumentList = false;
          programArgumentList = null;
-         if (args.length == 0) 
+         if (args.length == 0) {
             return true; // should not get here...
+          }
          // If the option to display MARS messages to standard erro is used,
       	// it must be processed before any others (since messages may be
       	// generated during option parsing).
@@ -470,14 +471,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             Globals.getSettings().setBooleanSettingNonPersistent(Settings.DELAYED_BRANCHING_ENABLED, delayedBranching);
             Globals.getSettings().setBooleanSettingNonPersistent(Settings.SELF_MODIFYING_CODE_ENABLED, selfModifyingCode);
             File mainFile = new File((String) filenameList.get(0)).getAbsoluteFile();// First file is "main" file
-            ArrayList filesToAssemble;
+            ArrayList<String> filesToAssemble;
             if (assembleProject) { 
                filesToAssemble = FilenameFinder.getFilenameList(mainFile.getParent(), Globals.fileExtensions);
                if (filenameList.size() > 1) {
                   // Using "p" project option PLUS listing more than one filename on command line.
                   // Add the additional files, avoiding duplicates.
                   filenameList.remove(0); // first one has already been processed
-                  ArrayList moreFilesToAssemble = FilenameFinder.getFilenameList(filenameList, FilenameFinder.MATCH_ALL_EXTENSIONS);
+                  ArrayList<String> moreFilesToAssemble = FilenameFinder.getFilenameList(filenameList, FilenameFinder.MATCH_ALL_EXTENSIONS);
                   // Remove any duplicates then merge the two lists.
                   for (int index2 = 0; index2<moreFilesToAssemble.size(); index2++) {
                      for (int index1 = 0; index1<filesToAssemble.size(); index1++) {
@@ -497,7 +498,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             if (Globals.debug) {
                out.println("--------  TOKENIZING BEGINS  -----------");
             }
-            ArrayList MIPSprogramsToAssemble = 
+            ArrayList<MIPSprogram> MIPSprogramsToAssemble = 
                       code.prepareFilesForAssembly(filesToAssemble, mainFile.getAbsolutePath(), null);		
             if (Globals.debug) {
                out.println("--------  ASSEMBLY BEGINS  -----------");

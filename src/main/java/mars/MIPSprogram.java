@@ -263,15 +263,15 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @throws ProcessingException Will throw exception if errors occured while reading or tokenizing.
     **/
    
-       public ArrayList prepareFilesForAssembly(ArrayList filenames, String leadFilename, String exceptionHandler) throws ProcessingException {
-         ArrayList MIPSprogramsToAssemble = new ArrayList();
+       public ArrayList<MIPSprogram> prepareFilesForAssembly(ArrayList<String> filenames, String leadFilename, String exceptionHandler) throws ProcessingException {
+         ArrayList<MIPSprogram> MIPSprogramsToAssemble = new ArrayList<MIPSprogram>();
          int leadFilePosition = 0;
          if (exceptionHandler != null && exceptionHandler.length() > 0) {
             filenames.add(0, exceptionHandler);
             leadFilePosition = 1;
          }
          for (int i=0; i<filenames.size(); i++) {
-            String filename = (String) filenames.get(i);  
+            String filename = filenames.get(i);  
             MIPSprogram preparee = (filename.equals(leadFilename)) ? this : new MIPSprogram();
             preparee.readSource(filename);
             preparee.tokenize();
