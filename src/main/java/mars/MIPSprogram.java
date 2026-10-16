@@ -56,7 +56,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private ArrayList<String> sourceList;
       private ArrayList<TokenList> tokenList;
       private ArrayList<ProgramStatement> parsedList;
-      private ArrayList machineList;
+      private ArrayList<ProgramStatement> machineList;
       private BackStepper backStepper;
       private SymbolTable localSymbolTable;
       private MacroPool macroPool;
@@ -157,7 +157,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @see ProgramStatement
     **/
     
-       public ArrayList getMachineList() {
+       public ArrayList<ProgramStatement> getMachineList() {
          return machineList;
       }
    
