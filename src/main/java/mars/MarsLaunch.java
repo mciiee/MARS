@@ -121,7 +121,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private int maxSteps;
       private int instructionCount;
       private PrintStream out; // stream for display of command line output
-      private ArrayList dumpTriples = null; // each element holds 3 arguments for dump option
+      private ArrayList<String[]> dumpTriples = null; // each element holds 3 arguments for dump option
       private ArrayList<String> programArgumentList; // optional program args for MIPS program (becomes argc, argv)
       private int assembleErrorExitCode;  // MARS command exit code to return if assemble error occurs
       private int simulateErrorExitCode;// MARS command exit code to return if simulation error occurs
@@ -178,7 +178,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             return;
          
          for (int i=0; i<dumpTriples.size(); i++) {
-            String[] triple = (String[])dumpTriples.get(i);
+            String[] triple = dumpTriples.get(i);
             File file = new File(triple[2]);
             Integer[] segInfo = MemoryDump.getSegmentBounds(triple[0]);
          	// If not segment name, see if it is address range instead.  DPS 14-July-2008
@@ -305,7 +305,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                } 
                else {
                   if (dumpTriples == null) 
-                     dumpTriples = new ArrayList();
+                     dumpTriples = new ArrayList<String[]>();
                   dumpTriples.add(new String[] {args[++i], args[++i], args[++i]});
                   //simulate = false;
                }
