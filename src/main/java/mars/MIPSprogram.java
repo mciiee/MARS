@@ -145,8 +145,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     **/
     
        public ArrayList<ProgramStatement> getParsedList() {
-         System.err.println("Got parsed list: ");
-         System.err.println(this.parsedList);
+         // System.err.println("Got parsed list: ");
+         // System.err.println(this.parsedList);
          return parsedList;
       }
    
