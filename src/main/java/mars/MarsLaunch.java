@@ -114,7 +114,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private static final int DECIMAL = 0; // memory and register display format
       private static final int HEXADECIMAL = 1;// memory and register display format
       private static final int ASCII = 2;// memory and register display format
-      private ArrayList registerDisplayList;
+      private ArrayList<String> registerDisplayList;
       private ArrayList<String> memoryDisplayList;
       private ArrayList<String> filenameList;
       private MIPSprogram code;
@@ -148,7 +148,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             instructionCount = 0;
             assembleErrorExitCode = 0;
             simulateErrorExitCode = 0;
-            registerDisplayList = new ArrayList();
+            registerDisplayList = new ArrayList<String>();
             memoryDisplayList = new ArrayList<String>();
             filenameList = new ArrayList<String>();
             MemoryConfigurations.setCurrentConfiguration(MemoryConfigurations.getDefaultConfiguration());
@@ -611,7 +611,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          String strValue;
          // Display requested register contents
          out.println();
-         Iterator regIter = registerDisplayList.iterator();
+         Iterator<String> regIter = registerDisplayList.iterator();
          while (regIter.hasNext()) {
             String reg = regIter.next().toString();
             if (RegisterFile.getUserRegister(reg)!=null) {
